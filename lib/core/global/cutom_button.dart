@@ -7,7 +7,7 @@ class CusomButton extends StatelessWidget {
   CusomButton({
     super.key,
     required this.text,
-    required this.onTap,    
+    required this.onTap,
     this.bgcolor,
     this.bordercolor,
     this.textcolor,
@@ -22,6 +22,7 @@ class CusomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final siz = MediaQuery.sizeOf(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -34,7 +35,10 @@ class CusomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.r),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 106.w, vertical: 15.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: siz.width * 0.28,
+            vertical: siz.height * 0.02,
+          ),
           child: Text(
             text,
             style: TextStyle(

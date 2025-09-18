@@ -11,7 +11,7 @@ class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OnbodingControllre onbodingControllre = Get.put(OnbodingControllre());
-    // final siz = MediaQuery.sizeOf(context);
+    final siz = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: AppColor.bacgourdColor,
       body: SafeArea(
@@ -21,7 +21,7 @@ class Onboarding extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 650.h,
+                  height: siz.height * 0.7,
                   child: PageView.builder(
                     itemCount: onbodingControllre.pagList.length,
                     onPageChanged: (index) =>

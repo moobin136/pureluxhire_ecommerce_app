@@ -4,12 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/const/app_colors.dart';
 
 class customOnbodingButton extends StatelessWidget {
-   customOnbodingButton({super.key,required this.text,required this.onTap});
+  customOnbodingButton({super.key, required this.text, required this.onTap});
   VoidCallback onTap;
   String text;
 
   @override
   Widget build(BuildContext context) {
+    final siz = MediaQuery.sizeOf(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -18,7 +19,10 @@ class customOnbodingButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(60.r),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: siz.width * 0.05,
+            vertical: siz.height * 0.02,
+          ),
           child: Text(
             text,
             style: TextStyle(
